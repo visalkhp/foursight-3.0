@@ -44,13 +44,13 @@
       <p class="eyebrow">Potential hazard</p><h2 id="hazardText"></h2>
     </section>
 
-    <section id="contextPanel" class="context panel hidden" aria-live="polite">
-      <p class="eyebrow">Locked context card</p><h2 id="contextTitle">Context</h2><p id="contextSummary"></p>
-      <button id="revealButton" class="button warning" type="button" disabled>Reveal priorities</button>
-    </section>
+    <div class="reveal-stage"><button id="revealButton" class="button warning" type="button" disabled>Reveal priorities</button></div>
 
     <section id="prioritiesPanel" class="priorities panel hidden" aria-live="polite">
       <p class="eyebrow">Decision stage</p><h2>Actionable priorities</h2><ol id="prioritiesList"></ol>
+      <section id="contextPanel" class="context hidden" aria-live="polite">
+        <p class="eyebrow">Locked context card</p><h2 id="contextTitle">Context</h2><p id="contextSummary"></p>
+      </section>
       <div class="human-choice"><p class="eyebrow">Human priority selection</p><p>Which action would you prioritize first?</p><div id="priorityChoices" class="priority-choices"></div><button id="confirmPriority" class="button primary" type="button" disabled>Lock my priority</button><p id="choiceStatus" class="choice-status" role="status" aria-live="polite"></p></div>
     </section>
 
