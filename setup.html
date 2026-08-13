@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#071b28">
   <title>FOURSIGHT 3.0 — LED Setup</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./backup.css">
 </head>
 <body>
   <main class="shell setup-shell">
@@ -13,7 +14,7 @@
       <div>
         <p class="eyebrow">FOURSIGHT 3.0 • Physical model setup</p>
         <h1>LED <span>SETUP</span></h1>
-        <p>Enter the Start and End LED numbers for each locked terrain zone. Configuration is stored locally on this device.</p>
+        <p>Enter the Start and End LED numbers for each locked terrain zone, save them locally, then send them to Arduino EEPROM.</p>
       </div>
       <a class="button secondary" href="./">Back to FOURSIGHT</a>
     </header>
@@ -54,9 +55,17 @@
       </div>
 
       <div class="setup-actions">
+        <button id="connectSetupButton" class="button secondary" type="button">Connect Arduino</button>
         <button id="saveButton" class="button primary" type="button">Save Configuration</button>
+        <button id="sendButton" class="button primary" type="button">Send to Arduino</button>
         <button id="loadButton" class="button secondary" type="button">Load Configuration</button>
         <button id="clearButton" class="button secondary" type="button">Clear Fields</button>
+      </div>
+      <div class="setup-actions zone-test-controls">
+        <label for="testZoneSelect">Test Zone</label>
+        <select id="testZoneSelect" class="zone-select"></select>
+        <button id="testZoneButton" class="button secondary" type="button">Test Zone</button>
+        <button id="setupDefaultButton" class="button secondary" type="button">Default Terrain</button>
       </div>
       <p id="saveStatus" class="setup-status" role="status" aria-live="polite">No saved configuration loaded.</p>
 
@@ -67,6 +76,8 @@
           <li>LED count = End − Start + 1.</li>
           <li>Overlapping zone ranges are allowed because the physical strip shares sections between terrain features.</li>
           <li>River Shore is not a separate zone.</li>
+          <li>Send to Arduino writes all 11 ranges to EEPROM, so the mapping survives power loss.</li>
+          <li>Test Zone temporarily lights the selected range; Default Terrain restores all normal zone colours.</li>
         </ul>
       </div>
     </section>

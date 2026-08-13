@@ -4,6 +4,15 @@
 
 The main page includes a collapsed **Manual Backup** section with S1–S6 buttons. Use it only if GTM or camera recognition fails. GTM remains the primary path. Both GTM predictions and manual selections call the same scenario activation function, which updates the full prediction, hazard, context, priorities and human-decision flow and sends the matching newline-delimited S1–S6 command to Arduino at 9600 baud.
 
+## Final LED architecture
+
+- The Setup Page defines Start/End LEDs for Hill, Wooded Area, Forest, Village, Power, Hospital, River, Bridge, Road, Farm and School.
+- **Save Configuration** stores the map in the browser. **Send to Arduino** sends the complete map at 9600 baud and stores it in Arduino EEPROM.
+- **Test Zone** lights one selected range. **Default Terrain** sends `D` and restores every zone's normal colour.
+- Scenario commands remain newline-delimited `S1` through `S6`.
+- S1 animates Power in yellow/amber; S2 renders flood zones bright blue; S3 flickers Forest red/orange; S4 marks contaminated River/Farm/Village red; S5 renders Hill/School landslide brown/red while River/Bridge/Road flood blue; S6 pulses River/Farm/Village orange/amber.
+- All unaffected zones remain in their normal terrain colours during every scenario.
+
 ## Decision flow
 
 1. Identify a scenario.

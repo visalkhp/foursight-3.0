@@ -26,3 +26,18 @@
   padding: 8px 10px;
   color: var(--muted);
 }
+
+.zone-test-controls {
+  margin-top: 14px;
+  align-items: center;
+}
+
+.zone-select {
+  min-width: 180px;
+  border: 1px solid #3b6271;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
