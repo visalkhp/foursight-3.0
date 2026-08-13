@@ -8,6 +8,7 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./backup.css">
   <title>FOURSIGHT 3.0</title>
 </head>
 <body>
@@ -28,6 +29,18 @@
         <dl><div><dt>Model</dt><dd id="modelStatus" class="status">Not loaded</dd></div><div><dt>Arduino Uno</dt><dd id="serialStatus" class="status">Not connected</dd></div></dl>
         <button id="connectButton" class="button secondary full" type="button">Connect Arduino Uno</button>
         <p id="message" class="message" role="status"></p>
+        <details class="manual-backup">
+          <summary>Manual Backup (use only if GTM/camera fails)</summary>
+          <p>Choose the scenario shown by the physical dials. This uses the same prediction, decision and Arduino path as GTM.</p>
+          <div class="backup-buttons" aria-label="Manual scenario backup">
+            <button class="button secondary" type="button" data-manual-scenario="0">S1</button>
+            <button class="button secondary" type="button" data-manual-scenario="1">S2</button>
+            <button class="button secondary" type="button" data-manual-scenario="2">S3</button>
+            <button class="button secondary" type="button" data-manual-scenario="3">S4</button>
+            <button class="button secondary" type="button" data-manual-scenario="4">S5</button>
+            <button class="button secondary" type="button" data-manual-scenario="5">S6</button>
+          </div>
+        </details>
       </aside>
     </section>
 

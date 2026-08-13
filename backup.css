@@ -1,0 +1,28 @@
+.manual-backup {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  color: var(--muted);
+}
+
+.manual-backup summary {
+  cursor: pointer;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.manual-backup p {
+  font-size: .8rem;
+  line-height: 1.45;
+}
+
+.backup-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.backup-buttons .button {
+  padding: 8px 10px;
+  color: var(--muted);
+}

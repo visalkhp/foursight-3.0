@@ -1,5 +1,9 @@
 # FOURSIGHT 3.0 — Priority 14
 
+## Priority 16 — GTM backup
+
+The main page includes a collapsed **Manual Backup** section with S1–S6 buttons. Use it only if GTM or camera recognition fails. GTM remains the primary path. Both GTM predictions and manual selections call the same scenario activation function, which updates the full prediction, hazard, context, priorities and human-decision flow and sends the matching newline-delimited S1–S6 command to Arduino at 9600 baud.
+
 ## Decision flow
 
 1. Identify a scenario.
